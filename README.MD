@@ -11,17 +11,26 @@ The R script does the following:
 
 # Process flow
 
-1. Download from the following source: "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+1. Download from the following source: "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip".
+Unzip in the working directory
 
-2. Unzip in the working directory
+2. Load the variable names from features.text
 
-3. Load the variables from features.text
-    
-    - only keep the second column as this one contais the actual variables
+3. Load the activity labels from activity_labels.txt
 
-    - filter out  measurements of means and standard deviations
+4. Load the training and test datasets
 
-4. Give the variables a more descriptive name
+5. Assign the variables names from step 2 and assign them to the appropriate datasets
+
+6. Link the activity labels to the appropriate data sets
+
+7. Create one big dataset
+
+8. Give an descriptive name to the labels
+
+9. Filter the mean and standard deviations measurements from the big data set
+
+10. Make the variables names more readible
 
 
 
