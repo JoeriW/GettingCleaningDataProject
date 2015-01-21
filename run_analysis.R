@@ -54,7 +54,7 @@ names(testX) = featuresVector
 names(trainX) = featuresVector
 
 # 6. merge the activitylabels with testY and trainY . 
-# I only keep the activity name and drop the activity id, but there is no obligation to do so 
+# I only kept the activity name and drop the activity id, but there is no obligation to do so 
 
 testY <- merge(testY,activityLabels)[2]
 trainY <- merge(trainY,activityLabels)[2]
@@ -68,28 +68,31 @@ totalSet <- rbind(testSet,trainSet)
 
 # 8. Label and give an appropiate name
 
-names(totalSet)[1] <- "subject.id"
+names(totalSet)[1] <- "subject"
 names(totalSet)[2] <- "activity"
 
 
-totalSet$subject.id <- factor(totalSet$subject.id)
+totalSet$subject <- factor(totalSet$subject)
 totalSet$activity <- factor(totalSet$activity)
 
 
-# 9. Only keep the the columns containing mean or standard deviations. don't include the first 2 columns in the grep function! They include
-# the subject and activity info. I decided to not keep the meanFreq() variables, but you could decide otherwise, 
-# I think you can make a case for both choices
+# 9. Only keep the the columns containing mean or standard deviations. I decided to not keep the meanFreq() variables 
+# Also keep the activity and subject.id
 
-totalSet <- totalSet[grep(".*-mean[(][)].*|.*std[(][])].*",names(totalSet)[3:563])]
+totalSet <- totalSet[grep(".*subject.*|.*activity.*|.*-mean[(][)].*|.*std[(][])].*",names(totalSet))]
+
 
 # 10. clean up the variables names
 
-totalSet <- gsub("^t","time.",totalSet)
-totalSet <- gsub("^f","freq.",totalSet)
-totalSet <- gsub("-mean[(][])]",".mean",totalSet)
-totalSet <- gsub("-std[(][])]",".stdev",totalSet)
-totalSet <- gsub("-",".",totalSet)
+names(totalSet) <- gsub("^t","time.",names(totalSet))
+names(totalSet) <- gsub("^f","freq.",names(totalSet))
+names(totalSet) <- gsub("-mean[(][])]",".mean",names(totalSet))
+names(totalSet) <- gsub("-std[(][])]",".stdev",names(totalSet))
+names(totalSet) <- gsub("-",".",names(totalSet))
 
+# 11. write csv table to working directory
+
+write.csv(totalSet,"totalset.csv",row.names = FALSE)
 
 
 
