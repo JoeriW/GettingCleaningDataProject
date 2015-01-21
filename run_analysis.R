@@ -76,10 +76,11 @@ totalSet$subject.id <- factor(totalSet$subject.id)
 totalSet$activity <- factor(totalSet$activity)
 
 
-# 9. Only keep the the columns containing mean or standard deviations. 
-# I decided to not keep the meanFreq() variables, but you could decide otherwise
+# 9. Only keep the the columns containing mean or standard deviations. don't include the first 2 columns in the grep function! They include
+# the subject and activity info. I decided to not keep the meanFreq() variables, but you could decide otherwise, 
+# I think you can make a case for both choices
 
-totalSet <- totalSet[grep(".*-mean[(][)].*|.*std[(][])].*",totalSet)]
+totalSet <- totalSet[grep(".*-mean[(][)].*|.*std[(][])].*",names(totalSet)[3:563])]
 
 # 10. clean up the variables names
 
@@ -88,6 +89,8 @@ totalSet <- gsub("^f","freq.",totalSet)
 totalSet <- gsub("-mean[(][])]",".mean",totalSet)
 totalSet <- gsub("-std[(][])]",".stdev",totalSet)
 totalSet <- gsub("-",".",totalSet)
+
+
 
 
 
