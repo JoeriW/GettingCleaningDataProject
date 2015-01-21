@@ -32,5 +32,7 @@ Unzip in the working directory
 
 10. Make the variables names more readible
 
+11. Write the obtained data set to the working directory
+
 
 
