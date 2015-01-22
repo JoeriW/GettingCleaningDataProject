@@ -9,30 +9,44 @@ The R script does the following:
 * Appropriately labels the data set with descriptive variable names
 * Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
+# Required packages
+
+- reshape2
+
 # Process flow
 
-1. Download from the following source: "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip".
+1. Verify if reshape2 package is installed
+
+2. Download from the following source: "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip".
 Unzip in the working directory
 
-2. Load the variable names from features.text
+3. Load the variable names from features.text
 
-3. Load the activity labels from activity_labels.txt
+4. Load the activity labels from activity_labels.txt
 
-4. Load the training and test datasets
+5. Load the training and test datasets
 
-5. Assign the variables names from step 2 and assign them to the appropriate datasets
+6. Assign the variables names from step 2 and assign them to the appropriate datasets
 
-6. Link the activity labels to the appropriate data sets
+7. Link the activity labels to the appropriate data sets
 
-7. Create one big dataset
+8. Create one big dataset
 
-8. Give an descriptive name to the labels
+9. Give a descriptive name to the labels
 
-9. Filter the mean and standard deviations measurements from the big data set
+10. Filter the mean and standard deviations measurements from the big data set
 
-10. Make the variables names more readible
+11. Make the variables names more readible
 
-11. Write the obtained data set to the working directory
+12. Write the obtained data set to the working directory
+
+13. Create a second tidy set containing the average of each variable for each activity and subject
+    - First melt the data frame: indicate which columns are ids (subject and activity), all other columns are considered measurement variables.
+    - Recast the melted data set into a dataframe containing the average of each measurement variable for each subject and activity
+
+14. Save the tidy dataset into a txt file (file: summaryset.txt)
+
+
 
 
 
