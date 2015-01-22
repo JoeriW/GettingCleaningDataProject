@@ -1,5 +1,5 @@
 ##Read me file for run_analysis.R script
-# General overview
+# Objective
 The R script does the following:
 
 * Downloading and unzipping the raw data
@@ -12,6 +12,18 @@ The R script does the following:
 # Required packages
 
 - reshape2
+
+
+
+# Result
+
+The result of run_analysis.R is the summaryset.txt file (space delimited file with header)
+
+To read the file in R:
+
+- read.table("summaryset.txt",header=TRUE)
+
+Script tested with R version 3.1.2
 
 # Process flow
 
