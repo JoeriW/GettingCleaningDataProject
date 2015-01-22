@@ -7,9 +7,10 @@
 ##creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
 
-#set the initial working directory
 
-setwd("~/R/GettingCleaningData/Project")
+# 0. install needed packages
+
+require(reshape2)
 
 
 # 1. download the zip file from the coursera website and unzip in the workdirectory
@@ -90,12 +91,23 @@ names(totalSet) <- gsub("-mean[(][])]",".mean",names(totalSet))
 names(totalSet) <- gsub("-std[(][])]",".stdev",names(totalSet))
 names(totalSet) <- gsub("-",".",names(totalSet))
 
-# 11. write csv table to working directory
+# 11. write csv table to working directory (not mandatory)
 
 write.csv(totalSet,"totalset.csv",row.names = FALSE)
 
 
+# 12. create tidy data set with the average of each variable for each activity and subject.
+# First melt the data frame, indicate which columns are the id columns (the first 2 columns, being subject and activity)
+# and which columns are the measure variables (leaving blank means that all non-ids are considered measure variables).
+# Recast the melted set into a dataframe taking the mean of each variable for each subject and activity
 
+
+meltedSet <- melt(totalSet,id.vars = c(1,2))
+summarySet <- dcast(meltedSet, subject + activity ~ variable,mean)
+
+# 13. Save the final results as txt file. Store into the working directory
+
+write.table(summarySet,file = "summaryset.txt",row.names = FALSE)
 
 
 
