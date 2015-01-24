@@ -38,9 +38,9 @@ Unzip in the working directory
 
 5. Load the training and test datasets
 
-6. Assign the variables names from step 2 and assign them to the appropriate datasets
+6. Assign the variables names from step 3 and assign them to the appropriate datasets (testX and trainX)
 
-7. Link the activity labels to the appropriate data sets
+7. Link the activity labels to the appropriate data sets (trainY and testY). Drop the activity id and only keep the name
 
 8. Create one big dataset
 
