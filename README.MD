@@ -1,5 +1,5 @@
-##Read me file for run_analysis.R script
-# Objective
+#Read me file for run_analysis.R script
+## Objective
 The R script does the following:
 
 * Downloading and unzipping the raw data
@@ -9,13 +9,13 @@ The R script does the following:
 * Appropriately labels the data set with descriptive variable names
 * Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
-# Required packages
+## Required packages
 
 - reshape2
 
 
 
-# Result
+## Result
 
 The result of run_analysis.R is the summaryset.txt file (space delimited file with header)
 
@@ -25,7 +25,7 @@ To read the file in R:
 
 Script tested with R version 3.1.2
 
-# Process flow
+## Process flow
 
 1. Verify if reshape2 package is installed
 
