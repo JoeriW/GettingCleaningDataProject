@@ -54,12 +54,13 @@ trainY <- read.table("./UCI HAR Dataset/train/y_train.txt")
 names(testX) = featuresVector
 names(trainX) = featuresVector
 
-# 7. merge the activitylabels with testY and trainY . 
+# 7. link the activity names to the activity ids storen in testX and testY 
 # I only kept the activity name and drop the activity id, but there is no obligation to do so 
 
-testY <- merge(testY,activityLabels)[2]
-trainY <- merge(trainY,activityLabels)[2]
-
+testY[,2] <- activityLabels[testY[,1],2]
+trainY[,2] <- activityLabels[trainY[,1],2]
+testY <- testY[2]
+trainY <- trainY[2]
 
 # 8. merge everything together to create one dataset
 
@@ -103,11 +104,11 @@ write.csv(totalSet,"totalset.csv",row.names = FALSE)
 
 
 meltedSet <- melt(totalSet,id.vars = c(1,2))
-summarySet <- dcast(meltedSet, subject + activity ~ variable,mean)
+tidySet <- dcast(meltedSet, subject + activity ~ variable,mean)
 
 # 14. Save the final results as txt file. Store into the working directory
 
-write.table(summarySet,file = "summaryset.txt",row.names = FALSE)
+write.table(tidySet,file = "tidy_set.txt",row.names = FALSE)
 
 
 
