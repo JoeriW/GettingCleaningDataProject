@@ -91,6 +91,14 @@ names(totalSet) <- gsub("^f","freq.",names(totalSet))
 names(totalSet) <- gsub("-mean[(][])]",".mean",names(totalSet))
 names(totalSet) <- gsub("-std[(][])]",".stdev",names(totalSet))
 names(totalSet) <- gsub("-",".",names(totalSet))
+names(totalSet) <- gsub("Acc",".accelerometer",names(totalSet))
+names(totalSet) <- gsub("Gyro",".gyroscope",names(totalSet))
+names(totalSet) <- gsub("Mag",".magnitude",names(totalSet))
+names(totalSet) <- gsub("Jerk",".jerk",names(totalSet))
+names(totalSet) <- gsub("BodyBody","body",names(totalSet))
+names(totalSet) <- gsub("Body","body",names(totalSet))
+names(totalSet) <- gsub("Gravity","gravity",names(totalSet))
+
 
 # 12. write csv table to working directory (not mandatory)
 
@@ -108,7 +116,7 @@ tidySet <- dcast(meltedSet, subject + activity ~ variable,mean)
 
 # 14. Save the final results as txt file. Store into the working directory
 
-write.table(tidySet,file = "tidy_set.txt",row.names = FALSE)
+write.table(tidySet,file = "tidyset.txt",row.names = FALSE)
 
 
 

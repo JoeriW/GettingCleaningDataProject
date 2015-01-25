@@ -17,11 +17,11 @@ The R script does the following:
 
 ## Result
 
-The result of run_analysis.R is the summaryset.txt file (space delimited file with header)
+The result of run_analysis.R is the tidyset.txt file (space delimited file with header)
 
 To read the file in R:
 
-- read.table("summaryset.txt",header=TRUE)
+- read.table("tidyset.txt",header=TRUE)
 
 Script tested with R version 3.1.2
 
