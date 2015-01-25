@@ -22,13 +22,13 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 subject
 
 - _description_: identifier of the subject
-- _data_  _type_: string
+- _data_  _type_: int
 - _values_: 1-30, identifier for the volunteers participating to the expermiments (cfr. Data Set Information)
 
 activity
 
 - _description_: identifies the activities during which the measurements were registered
-- _data_  _type_: int
+- _data_  _type_: string
 - _values_: WALKING, WALKING_UPSTAIRS,  WALKING__DOWNSTAIRS SITTING, STANDING, LAYING
 
 ### measurement  variables:
