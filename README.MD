@@ -56,7 +56,7 @@ Unzip in the working directory
     - First melt the data frame: indicate which columns are ids (subject and activity), all other columns are considered measurement variables.
     - Recast the melted data set into a dataframe containing the average of each measurement variable for each subject and activity
 
-14. Save the tidy dataset into a txt file (file: summaryset.txt)
+14. Save the tidy dataset into a txt file (file: tidyset.txt)
 
 
 
