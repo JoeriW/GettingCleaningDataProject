@@ -188,6 +188,8 @@ freq.body.gyroscope.jerk.magnitude.stdev
 
 ## Data Manipulations:
 
+Describing the most significant data manipulations in the run_analysis.R script
+
 - features
     - the second column of features.txt contains the measurements. The first column is dropped
     - only the mean and standard deviation measurments should be kept. (You can discuss about whether or not to keep the meanFreq variables, I didn't...but this choice is debatable)
@@ -206,10 +208,11 @@ freq.body.gyroscope.jerk.magnitude.stdev
     - Gyro replaced by gyroscope
     - Mag replaced by magnitude
     - Jerk replaced by jerk
-    - BodyBody/Body replaced by body
+    - BodyBody replaced by body
+    - Body replaced by body
     - Gravity replaced by gravity
 
-- tidy_set:
+- tidyset:
    - create tidy data set with the average of each variable for each activity and subject
    - First melt the data frame, indicate which columns are the id columns (the first 2 columns, being subject and activity)
 and which columns are the measure variables (leaving blank means that all non-ids are considered measure variables).

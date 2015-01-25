@@ -54,8 +54,8 @@ trainY <- read.table("./UCI HAR Dataset/train/y_train.txt")
 names(testX) = featuresVector
 names(trainX) = featuresVector
 
-# 7. link the activity names to the activity ids storen in testX and testY 
-# I only kept the activity name and drop the activity id, but there is no obligation to do so 
+# 7. link the activity names to the activity ids stored in testX and testY 
+# I only kept the activity name and dropped the activity id, but there is no obligation to do so 
 
 testY[,2] <- activityLabels[testY[,1],2]
 trainY[,2] <- activityLabels[trainY[,1],2]
